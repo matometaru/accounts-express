@@ -19,7 +19,11 @@ app.use(session({
   domain: "localhost",
   resave: false,
   saveUninitialized: true,
-  cookie: { maxAge: 30 * 60 * 1000 }
+  cookie: {
+    httpOnly: true,
+    // secure: true,
+    maxAge: 30 * 60 * 1000
+  }
 }));
 
 const app1ServiceAccount = require('../firebase/app1/firebase-key.js');
